@@ -10,7 +10,11 @@
 <header>
   <h1><%= link_to 'ts', tshirts_path %></h1>
   <%= link_to 'New Tshirt', new_tshirt_path %>
+  <%= link_to 'Log In', new_user_session_path %>
+  <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
 </header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

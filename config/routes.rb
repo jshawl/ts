@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
+
   resources :tshirts
   root 'tshirts#index'
 
